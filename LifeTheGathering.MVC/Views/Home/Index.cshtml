@@ -1,0 +1,13 @@
+﻿@model LifeTheGathering.MVC.ViewModels.IndexViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Give me a name, call me .. SOMETHING!</h1>
+@using(Html.BeginForm("CreateUser", "Home"))
+    {
+    @Html.TextBoxFor(x => x.Name)
+    <input type="submit" name="submit" />
+    } 

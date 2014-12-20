@@ -1,0 +1,31 @@
+﻿@model LifeTheGathering.MVC.ViewModels.GameViewModel
+
+<h1>Oh hi, your name is @Model.User.Name!</h1>
+
+<h3 style="margin-bottom: 0px;">Stats</h3>
+<span id="foodStas" style="display: block;">Food: @Model.User.Food</span>
+<span id="foodStas" style="display: block;">Wood: @Model.User.Wood</span>
+<p>You own @Model.User.Snails snails, what you gonna do with them?</p>
+
+@if(Model.Message != null)
+{
+    <p>@Model.Message</p>
+}
+
+<h1>Wanna get some more stats? Try this ..</h1>
+
+<span style="display: block;">@Html.ActionLink("Gather food", "GatherFood")</span>
+@if(Model.User.Food >= 5)
+{
+    <span style="display: block;">@Html.ActionLink("Gather some wood in the forest", "GatherWood")</span>
+}
+
+@if(Model.User.Food >= 5)
+{
+    <p>Bing It! You're Bing now! And with Bing amounts of food, yes ALL THAT FOOD, you'll survive gathering wood in the forest alone!</p>
+}
+
+<p>
+    Vill du köpa snigel?
+    <span style="display: block;">@Html.ActionLink("Buy your Swenglish snail here!", "BuySnail")</span>
+</p>
